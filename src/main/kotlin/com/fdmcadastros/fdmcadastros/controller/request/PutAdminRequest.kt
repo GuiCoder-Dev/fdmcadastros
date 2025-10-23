@@ -5,18 +5,13 @@ import com.fdmcadastros.fdmcadastros.validation.unique.EmailUnique
 import jakarta.validation.constraints.Email
 import jakarta.validation.constraints.NotEmpty
 
-data class PostAdminRequest(
+data class PutAdminRequest(
 
     @field: NotEmpty(message = "Name cannot be empty")
-    var name: String,
+    var name: String?,
 
-    // Fazer verificação melhor
     @field: Email(message = "Email must be valid")
     @EmailAvaliable
     @EmailUnique
-    var email: String,
-
-    @field: NotEmpty(message = "Password cannot be empty")
-    var password: String
-
+    var email: String?,
 )

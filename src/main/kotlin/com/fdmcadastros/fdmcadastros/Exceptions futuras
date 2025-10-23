@@ -1,0 +1,3 @@
+1 - Email único (não pode ser o mesmo) -> EmailUnique
+2 - Email Domínio válido (tem que ter domínio válido) -> EmailAvaliable
+3 - Não encontrou o id (id não encotrado) -> AdminService -> fun getById
