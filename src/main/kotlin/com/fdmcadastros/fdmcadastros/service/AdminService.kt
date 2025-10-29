@@ -13,6 +13,7 @@ class AdminService(
     private val passwordEncoder: PasswordEncoder
 ) {
 
+    // Post
     fun create(admin: AdminModel){
         val adminWithPasswordCripty =
             admin.copy(
@@ -21,14 +22,17 @@ class AdminService(
         adminRepository.save(adminWithPasswordCripty)
     }
 
+    // Get All
     fun list(pageable: Pageable): Page<AdminModel> {
         return adminRepository.findAll(pageable)
     }
 
+    // Get Id
     fun getById(id: Int): AdminModel {
         return adminRepository.findById(id).orElseThrow()
     }
 
+    // Put
     fun update(admin: AdminModel){
         adminRepository.save(admin)
     }

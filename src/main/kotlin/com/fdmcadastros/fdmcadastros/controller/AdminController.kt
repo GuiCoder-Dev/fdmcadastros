@@ -3,8 +3,9 @@ package com.fdmcadastros.fdmcadastros.controller
 
 import com.fdmcadastros.fdmcadastros.controller.request.PostAdminRequest
 import com.fdmcadastros.fdmcadastros.controller.request.PutAdminRequest
+import com.fdmcadastros.fdmcadastros.controller.response.AdminAllResponse
+import com.fdmcadastros.fdmcadastros.extesion.toAdminAllResponse
 import com.fdmcadastros.fdmcadastros.extesion.toAdminModel
-import com.fdmcadastros.fdmcadastros.model.AdminModel
 import com.fdmcadastros.fdmcadastros.service.AdminService
 import jakarta.validation.Valid
 import org.springframework.data.domain.Page
@@ -27,8 +28,8 @@ class AdminController(
 
     @GetMapping("/lists")
     @ResponseStatus(HttpStatus.OK)
-    fun listAdmin(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<AdminModel> {
-        return adminService.list(pageable)
+    fun listAdmin(@PageableDefault(page = 0, size = 10) pageable: Pageable): Page<AdminAllResponse> {
+        return adminService.list(pageable).map {it.toAdminAllResponse()}
     }
 
     @PutMapping("/update/{id}")

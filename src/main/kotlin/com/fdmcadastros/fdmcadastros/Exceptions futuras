@@ -1,3 +1,10 @@
+Excpetions:
+
 1 - Email único (não pode ser o mesmo) -> EmailUnique
 2 - Email Domínio válido (tem que ter domínio válido) -> EmailAvaliable
 3 - Não encontrou o id (id não encotrado) -> AdminService -> fun getById
+4 - Não encontrou o id (id não encotrado) -> StudentService -> fun getById
+5 - Aluno está INACTIVE e quer usar o put (se inactive não pode usar) -> StudentService -> update
+
+Erros:
+

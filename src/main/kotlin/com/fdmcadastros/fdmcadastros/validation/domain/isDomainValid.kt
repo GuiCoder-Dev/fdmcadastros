@@ -1,4 +1,4 @@
-package com.fdmcadastros.fdmcadastros.validation
+package com.fdmcadastros.fdmcadastros.validation.domain
 
 import java.util.Hashtable
 import javax.naming.directory.InitialDirContext

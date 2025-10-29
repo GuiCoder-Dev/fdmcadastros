@@ -1,6 +1,5 @@
 package com.fdmcadastros.fdmcadastros.validation.domain
 
-import com.fdmcadastros.fdmcadastros.validation.isDomainValid
 import jakarta.validation.ConstraintValidator
 import jakarta.validation.ConstraintValidatorContext
 
