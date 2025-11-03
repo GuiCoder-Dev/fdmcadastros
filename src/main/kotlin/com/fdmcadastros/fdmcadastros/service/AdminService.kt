@@ -37,6 +37,7 @@ class AdminService(
         adminRepository.save(admin)
     }
 
+    // Email Unique
     fun emailUnique(email: String): Boolean {
         return !adminRepository.existsByEmail(email)
     }

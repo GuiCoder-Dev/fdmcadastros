@@ -11,6 +11,7 @@ import java.time.LocalDate
 
 data class PostStudentRequest(
 
+    @field: NotNull(message = "adminId cannot be null")
     @JsonAlias("admin_id")
     var adminId: Int,
 
@@ -36,7 +37,7 @@ data class PostStudentRequest(
 
     // formato (yyyy-mm-dd)
     @field: NotNull(message = "birthdayDate cannot be null")
-    @field: Past(message = "the birthday date must be after the current date")
+    @field: Past(message = "the birthdayDate must be before the current date")
     @JsonAlias("birthday_date")
     var birthdayDate: LocalDate,
 

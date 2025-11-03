@@ -1,0 +1,64 @@
+package com.fdmcadastros.fdmcadastros.service
+
+import com.fdmcadastros.fdmcadastros.enums.student.Status
+import com.fdmcadastros.fdmcadastros.model.PaymentModel
+import com.fdmcadastros.fdmcadastros.model.StudentModel
+import com.fdmcadastros.fdmcadastros.repository.PaymentRepository
+import com.fdmcadastros.fdmcadastros.repository.StudentRepository
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
+import org.springframework.stereotype.Service
+
+
+@Service
+class PaymentService(
+    private val paymentRepository: PaymentRepository,
+) {
+
+
+    // Post
+    fun payment(payment: PaymentModel) {
+        if(payment.student.status == Status.ACTIVE){
+            paymentRepository.save(payment)
+        }
+        else(
+            TODO()
+        )
+    }
+
+    // Get All
+    fun listAll(pageable: Pageable, id: Int?): Page<PaymentModel> {
+        id?.let{
+            return paymentRepository.findAllByStudentId(id, pageable)
+        }
+        return paymentRepository.findAll(pageable)
+    }
+
+    // Get Id
+    fun getById(id: Int): PaymentModel {
+        return paymentRepository.findById(id).orElseThrow()
+    }
+
+    // Put
+    fun update(payment: PaymentModel){
+        if(payment.student.status == Status.ACTIVE){
+            paymentRepository.save(payment)
+        }
+        else {
+            TODO()
+        }
+    }
+
+    // Delete
+    fun delete(id: Int, payment: PaymentModel) {
+        if(payment.student.status == Status.ACTIVE){
+            paymentRepository.deleteById(id)
+        }
+        else {
+            TODO()
+        }
+    }
+
+
+
+}
