@@ -4,4 +4,3 @@ CREATE TABLE admin(
     email varchar(255) not null unique,
     password varchar(255) not null
 );
-

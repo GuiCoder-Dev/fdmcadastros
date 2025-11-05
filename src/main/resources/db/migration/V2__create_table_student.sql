@@ -12,4 +12,3 @@ CREATE TABLE student(
     status varchar(255) not null,
     FOREIGN KEY (admin_id) REFERENCES admin(id)
 );
-

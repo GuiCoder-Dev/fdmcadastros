@@ -4,4 +4,3 @@ CREATE TABLE payment(
     monthly_payment decimal(10, 2) not null,
     payment_date date not null
 );
-
