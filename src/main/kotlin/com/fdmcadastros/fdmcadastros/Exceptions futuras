@@ -12,7 +12,7 @@ Excpetions:
 10 - Aluno inactive para update pagamento -> PaymentService - fun update
 11 - Aluno inactive para deletar pagamento -> PaymentService - fun delete
 12 - Parametro studentID (se parametro errado = erro) -> PaymentService -> fun listAll
-
+13 - Parametro year (se parametro errado = erro) -> ViewMonthlyValuePerYearService -> fun listAll
 
 Erros:
 
