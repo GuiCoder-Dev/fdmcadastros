@@ -13,6 +13,10 @@ Excpetions:
 11 - Aluno inactive para deletar pagamento -> PaymentService - fun delete
 12 - Parametro studentID (se parametro errado = erro) -> PaymentService -> fun listAll
 13 - Parametro year (se parametro errado = erro) -> ViewMonthlyValuePerYearService -> fun listAll
+14 - (erro de autenticação) authentiactionToken -> AutheticationFilter -> fun attemptAuthentication
+15 - Id errado (e-mail) -> UserDetailAdminService -> fun loadUserByUsername
+16 - SecretKey errada -> JwtUtil -> getClains
+17 - token null ou expirado -> JwtUtil -> isValidToken
 
 Erros:
 

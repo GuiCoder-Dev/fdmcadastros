@@ -35,6 +35,12 @@ dependencies {
 	// Spring Security
 	implementation("org.springframework.boot:spring-boot-starter-security")
 
+	// JWT
+	implementation("io.jsonwebtoken:jjwt:0.13.0")
+
+	// .env
+	implementation("io.github.cdimascio:dotenv-kotlin:6.5.1")
+
 	// Spring Validation
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 
