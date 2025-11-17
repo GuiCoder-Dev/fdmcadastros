@@ -16,7 +16,9 @@ Excpetions:
 14 - (erro de autenticação) authentiactionToken -> AutheticationFilter -> fun attemptAuthentication
 15 - Id errado (e-mail) -> UserDetailAdminService -> fun loadUserByUsername
 16 - SecretKey errada -> JwtUtil -> getClains
-17 - token null ou expirado -> JwtUtil -> isValidToken
+17 - token null ou expirado -> AuthorizationFilter -> getAuthentication
+
+
 
 Erros:
 

@@ -2,7 +2,9 @@ package com.fdmcadastros.fdmcadastros.config
 
 import com.fdmcadastros.fdmcadastros.repository.AdminRepository
 import com.fdmcadastros.fdmcadastros.security.AuthenticationFilter
+import com.fdmcadastros.fdmcadastros.security.AuthorizationFilter
 import com.fdmcadastros.fdmcadastros.security.JwtUtil
+import com.fdmcadastros.fdmcadastros.service.UserDetailAdminService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod
@@ -17,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 
 @Configuration
 @EnableWebSecurity
@@ -45,7 +48,7 @@ class SecurityConfig(
     }
 
     @Bean
-    fun filterChain(httpSecurity: HttpSecurity, authenticationManager: AuthenticationManager, jwtUtil: JwtUtil): SecurityFilterChain {
+    fun filterChain(httpSecurity: HttpSecurity, authenticationManager: AuthenticationManager, jwtUtil: JwtUtil, userDetailAdminService: UserDetailAdminService): SecurityFilterChain {
 
         return httpSecurity
 
@@ -60,6 +63,10 @@ class SecurityConfig(
             }
 
             .addFilter(AuthenticationFilter(authenticationManager,adminRepository, jwtUtil))
+            .addFilterBefore(
+                AuthorizationFilter(jwtUtil, userDetailAdminService),
+                UsernamePasswordAuthenticationFilter::class.java
+            )
 
             .sessionManagement { sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .build()

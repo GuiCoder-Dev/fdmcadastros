@@ -11,9 +11,9 @@ import java.time.LocalDate
 
 data class PostStudentRequest(
 
-    @field: NotNull(message = "adminId cannot be null")
-    @JsonAlias("admin_id")
-    var adminId: Int,
+//    @field: NotNull(message = "adminId cannot be null")
+//    @JsonAlias("admin_id")
+//    var adminId: Int,
 
     @field: NotEmpty(message = "studentName cannot be empty")
     var name: String,

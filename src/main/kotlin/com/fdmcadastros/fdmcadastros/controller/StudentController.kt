@@ -6,6 +6,7 @@ import com.fdmcadastros.fdmcadastros.controller.response.StudentAllResponse
 import com.fdmcadastros.fdmcadastros.enums.student.ClassName
 import com.fdmcadastros.fdmcadastros.extesion.toStudentAllResponse
 import com.fdmcadastros.fdmcadastros.extesion.toStudentModel
+import com.fdmcadastros.fdmcadastros.security.UserSecurityDetails
 import com.fdmcadastros.fdmcadastros.service.AdminService
 import com.fdmcadastros.fdmcadastros.service.StudentService
 import jakarta.validation.Valid
@@ -13,7 +14,9 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
+import org.springframework.security.core.Authentication
 import org.springframework.web.bind.annotation.*
+
 
 @RestController
 @RequestMapping("/students")
@@ -24,8 +27,9 @@ class StudentController(
 
     @PostMapping("/creates")
     @ResponseStatus(HttpStatus.CREATED)
-    fun createStudent(@RequestBody @Valid student: PostStudentRequest){
-        val adminId = adminService.getById(id = student.adminId)
+    fun createStudent(@RequestBody @Valid student: PostStudentRequest, authentication: Authentication){
+        val principal = authentication.principal as UserSecurityDetails
+        val adminId = adminService.getById(id = principal.id)
         studentService.create(student.toStudentModel(adminId))
     }
 
