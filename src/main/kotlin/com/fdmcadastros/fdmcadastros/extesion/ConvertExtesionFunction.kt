@@ -71,7 +71,7 @@ fun PutStudentRequest.toStudentModel(previousValue: StudentModel): StudentModel 
 // Request to Model
 fun PostPaymentRequest.toPaymentModel(student: StudentModel): PaymentModel {
     return PaymentModel(
-        student= student,
+        student = student,
         monthlyPayment = this.monthlyPayment,
         paymentDate = this.paymentDate,
     )

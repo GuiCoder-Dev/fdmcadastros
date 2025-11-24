@@ -3,6 +3,8 @@ package com.fdmcadastros.fdmcadastros.service
 import com.fdmcadastros.fdmcadastros.controller.response.StudentAllResponse
 import com.fdmcadastros.fdmcadastros.enums.student.ClassName
 import com.fdmcadastros.fdmcadastros.enums.student.Status
+import com.fdmcadastros.fdmcadastros.enuns.error.Errors
+import com.fdmcadastros.fdmcadastros.exception.NotFoundIdException
 import com.fdmcadastros.fdmcadastros.model.StudentModel
 import com.fdmcadastros.fdmcadastros.repository.StudentRepository
 import org.springframework.data.domain.Page
@@ -35,7 +37,7 @@ class StudentService(
 
     // Get Id
     fun getById(id: Int): StudentModel {
-        return studentRepository.findById(id).orElseThrow()
+        return studentRepository.findById(id).orElseThrow{NotFoundIdException(Errors.FDM101.message.format(id), Errors.FDM101.code)}
     }
 
     // Put

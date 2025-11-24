@@ -2,6 +2,7 @@ package com.fdmcadastros.fdmcadastros.security
 
 import io.jsonwebtoken.Claims
 import io.jsonwebtoken.Jwts
+import io.jsonwebtoken.security.SignatureException
 import org.springframework.stereotype.Component
 import java.util.Date
 
@@ -25,8 +26,8 @@ private val secretKey: SecretKey
                 .verifyWith(secretKey.jwtSecretKey)
                 .build()
                 .parseSignedClaims(token).payload
-        } catch(ex: Exception){
-            throw RuntimeException("SecretKey inválida", ex)
+        } catch(ex: SignatureException){
+            throw SignatureException("Invalid JWT signature")
         }
     }
 

@@ -12,12 +12,14 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PageableDefault
 import org.springframework.http.HttpStatus
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.*
+
 
 @RestController
 @RequestMapping("/admin")
 class AdminController(
-    val adminService: AdminService,
+    private val adminService: AdminService,
 ) {
 
     @PostMapping("/creates")
@@ -33,6 +35,7 @@ class AdminController(
     }
 
     @PutMapping("/update/{id}")
+    @PreAuthorize("#id == authentication.principal.id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun updateAdmin(@PathVariable id: Int, @RequestBody @Valid admin: PutAdminRequest){
         val previousAdmin = adminService.getById(id)

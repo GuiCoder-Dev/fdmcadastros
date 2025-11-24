@@ -1,5 +1,7 @@
 package com.fdmcadastros.fdmcadastros.service
 
+import com.fdmcadastros.fdmcadastros.enuns.error.Errors
+import com.fdmcadastros.fdmcadastros.exception.NotFoundIdException
 import com.fdmcadastros.fdmcadastros.model.AdminModel
 import com.fdmcadastros.fdmcadastros.repository.AdminRepository
 import org.springframework.data.domain.Page
@@ -29,7 +31,7 @@ class AdminService(
 
     // Get Id
     fun getById(id: Int): AdminModel {
-        return adminRepository.findById(id).orElseThrow()
+        return adminRepository.findById(id).orElseThrow{NotFoundIdException(Errors.FDM101.message.format(id), Errors.FDM101.code)}
     }
 
     // Put

@@ -1,22 +1,23 @@
-Excpetions:
+Exceptions:
 
-1 - Email único (não pode ser o mesmo) -> EmailUnique
-2 - Email Domínio válido (tem que ter domínio válido) -> EmailAvaliable
-3 - Não encontrou o id (id não encontrado) -> AdminService -> fun getById
-4 - Não encontrou o id (id não encontrado) -> StudentService -> fun getById
-5 - Aluno está INACTIVE e quer usar o put (se inactive não pode usar) -> StudentService -> update
-6 - Parametro className errado (se parametro errado = erro) -> StudentService -> listall
-7 - Não encontrou o id (id não encotrado) -> PaymentService -> fun getById
-8 - EM TODA REQUEST (pode ser que o usuário erre o formato das coisas (ex: data))
-9 - Aluno inactive para efetuar pagamento -> PaymentService - fun payment
-10 - Aluno inactive para update pagamento -> PaymentService - fun update
-11 - Aluno inactive para deletar pagamento -> PaymentService - fun delete
-12 - Parametro studentID (se parametro errado = erro) -> PaymentService -> fun listAll
-13 - Parametro year (se parametro errado = erro) -> ViewMonthlyValuePerYearService -> fun listAll
-14 - (erro de autenticação) authentiactionToken -> AutheticationFilter -> fun attemptAuthentication
-15 - Id errado (e-mail) -> UserDetailAdminService -> fun loadUserByUsername
-16 - SecretKey errada -> JwtUtil -> getClains
-17 - token null ou expirado -> AuthorizationFilter -> getAuthentication
+1 - Email único (não pode ser o mesmo) -> EmailUnique                                                                   (CHECK)
+2 - Email Domínio válido (tem que ter domínio válido) -> EmailAvaliable                                                 (CHECK)
+3 - Não encontrou o id (id não encontrado) -> AdminService -> fun getById                                               (CHECK/ERRO)
+4 - Não encontrou o id (id não encontrado) -> StudentService -> fun getById                                             (CHECK)
+5 - Aluno está INACTIVE e quer usar o put (se inactive não pode usar) -> StudentService -> update                       (CHECK)
+6 - Parametro className errado (se parametro errado = erro) -> StudentService -> listall                                (CHECK)
+7 - Não encontrou o id (id não encotrado) -> PaymentService -> fun getById                                              (CHECK)
+8 - EM TODA REQUEST (pode ser que o usuário erre o formato das coisas (ex: data))                                       (CHECK)
+9 - Aluno inactive para efetuar pagamento -> PaymentService - fun payment                                               (CHECK)
+10 - Aluno inactive para update pagamento -> PaymentService - fun update                                                (CHECK)
+11 - Aluno inactive para deletar pagamento -> PaymentService - fun delete                                               (CHECK)
+12 - Parametro studentID (se parametro errado = erro) -> PaymentService -> fun listAll                                  (CHECK/MAIS OU MENOS)
+13 - Parametro year (se parametro errado = erro) -> ViewMonthlyValuePerYearService -> fun listAll                       (CHECK/MAIS OU MENOS)
+14 - (erro de autenticação) authentiactionToken -> AutheticationFilter -> fun attemptAuthentication                     (CHECK(IA))
+15 - Id errado (e-mail) -> UserDetailAdminService -> fun loadUserByUsername                                             (CHECK)
+16 - SecretKey errada -> JwtUtil -> getClains                                                                           (CHECK?)
+17 - token null ou expirado -> AuthorizationFilter -> getAuthentication                                                 (CHECK)
+18 - Id não é seu -> AdminController -> PUT                                                                             (NÃO CONSEGUE TRATAR)
 
 
 
@@ -25,5 +26,3 @@ Erros:
 
 
 
-Fazer no futuro:
-1 - Quando JWT tiver config -> passar automaticamente o id do admin na criação do aluno

@@ -1,6 +1,8 @@
 package com.fdmcadastros.fdmcadastros.service
 
 import com.fdmcadastros.fdmcadastros.enums.student.Status
+import com.fdmcadastros.fdmcadastros.enuns.error.Errors
+import com.fdmcadastros.fdmcadastros.exception.NotFoundIdException
 import com.fdmcadastros.fdmcadastros.model.PaymentModel
 import com.fdmcadastros.fdmcadastros.model.StudentModel
 import com.fdmcadastros.fdmcadastros.repository.PaymentRepository
@@ -36,7 +38,8 @@ class PaymentService(
 
     // Get Id
     fun getById(id: Int): PaymentModel {
-        return paymentRepository.findById(id).orElseThrow()
+        return paymentRepository.findById(id).orElseThrow{ NotFoundIdException(Errors.FDM101.message.format(id), Errors.FDM101.code)
+        }
     }
 
     // Put
