@@ -77,6 +77,30 @@ class ControllerAdvice {
                     errors = bindingResult.fieldErrors.map { FieldErrorResponse(it.field, message = null) }
                 )
             }
+            fieldErrors.any { it.field == "birthdayDate" && it.code?.contains("PastOrPresent") == true } -> {
+                ErrorResponse(
+                    message = Errors.FDM801.message,
+                    internalCode = Errors.FDM801.code,
+                    httpStatusCode = HttpStatus.BAD_REQUEST.value(),
+                    errors = bindingResult.fieldErrors.map { FieldErrorResponse(it.field, message = null) }
+                )
+            }
+            fieldErrors.any { it.field == "registrationDate" && it.code?.contains("PastOrPresent") == true } -> {
+                ErrorResponse(
+                    message = Errors.FDM802.message,
+                    internalCode = Errors.FDM802.code,
+                    httpStatusCode = HttpStatus.BAD_REQUEST.value(),
+                    errors = bindingResult.fieldErrors.map { FieldErrorResponse(it.field, message = null) }
+                )
+            }
+            fieldErrors.any{ it.field == "paymentDate" && it.code?.contains("PastOrPresent") == true } -> {
+                ErrorResponse(
+                    message = Errors.FDM803.message,
+                    internalCode = Errors.FDM803.code,
+                    httpStatusCode = HttpStatus.BAD_REQUEST.value(),
+                    errors = bindingResult.fieldErrors.map { FieldErrorResponse(it.field, message = null) }
+                )
+            }
             else -> {
                 ErrorResponse(
                     message = "***",

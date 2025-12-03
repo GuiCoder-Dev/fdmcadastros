@@ -5,7 +5,6 @@ import com.fdmcadastros.fdmcadastros.controller.request.PutPaymentRequest
 import com.fdmcadastros.fdmcadastros.controller.response.PaymentAllResponse
 import com.fdmcadastros.fdmcadastros.extesion.toPaymentModel
 import com.fdmcadastros.fdmcadastros.extesion.toPaymentResponse
-import com.fdmcadastros.fdmcadastros.model.StudentModel
 import com.fdmcadastros.fdmcadastros.service.PaymentService
 import com.fdmcadastros.fdmcadastros.service.StudentService
 import jakarta.validation.Valid
@@ -35,17 +34,23 @@ class PaymentController(
         return paymentService.listAll(pageable = pageable, id).map {it.toPaymentResponse()}
     }
 
+    @GetMapping("/lists/actives")
+    @ResponseStatus(HttpStatus.OK)
+    fun listPaymentsActives(@RequestParam id: Int?, @PageableDefault(page = 0, size = 10) pageable: Pageable): Page<PaymentAllResponse> {
+        return paymentService.listActives(pageable = pageable, id).map {it.toPaymentResponse()}
+    }
+
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun updatePayment(@PathVariable id: Int, @RequestBody @Valid payment: PutPaymentRequest){
         val previousPayment = paymentService.getById(id = id)
-        return paymentService.update(payment.toPaymentModel(previousPayment))
+        paymentService.update(payment.toPaymentModel(previousPayment))
     }
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun deletePayment(@PathVariable id: Int){
         val payment = paymentService.getById(id = id)
-        return paymentService.delete(id = id, payment)
+        paymentService.delete(id = id, payment)
     }
 }

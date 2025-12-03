@@ -3,17 +3,15 @@ package com.fdmcadastros.fdmcadastros.controller.request
 import com.fasterxml.jackson.annotation.JsonAlias
 import com.fdmcadastros.fdmcadastros.enums.student.ClassName
 import com.fdmcadastros.fdmcadastros.enums.student.Modality
+import jakarta.validation.constraints.Future
 import jakarta.validation.constraints.NotEmpty
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Past
+import jakarta.validation.constraints.PastOrPresent
 import java.math.BigDecimal
 import java.time.LocalDate
 
 data class PostStudentRequest(
-
-//    @field: NotNull(message = "adminId cannot be null")
-//    @JsonAlias("admin_id")
-//    var adminId: Int,
 
     @field: NotEmpty(message = "studentName cannot be empty")
     var name: String,
@@ -32,12 +30,13 @@ data class PostStudentRequest(
 
     // formato (yyyy-mm-dd)
     @field: NotNull(message = "registrationDate cannot be null")
+    @field: PastOrPresent(message = "the registrationDate must be before the current date")
     @JsonAlias("registration_date")
     var registrationDate: LocalDate,
 
     // formato (yyyy-mm-dd)
     @field: NotNull(message = "birthdayDate cannot be null")
-    @field: Past(message = "the birthdayDate must be before the current date")
+    @field: PastOrPresent(message = "the birthdayDate must be before the current date")
     @JsonAlias("birthday_date")
     var birthdayDate: LocalDate,
 

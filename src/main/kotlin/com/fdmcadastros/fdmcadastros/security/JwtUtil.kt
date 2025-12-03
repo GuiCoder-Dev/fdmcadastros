@@ -11,7 +11,7 @@ class JwtUtil(
 private val secretKey: SecretKey
 ) {
     fun generateToken(id: Int): String {
-        val expiration = Date(System.currentTimeMillis() + 1000 * 3600) // 1 hora
+        val expiration = Date(System.currentTimeMillis() + 1000 * 360000)
 
         return Jwts.builder()
             .subject(id.toString())

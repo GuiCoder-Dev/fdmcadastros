@@ -36,6 +36,15 @@ class PaymentService(
         return paymentRepository.findAll(pageable)
     }
 
+
+    // Get Actives
+    fun listActives(pageable: Pageable, id: Int?): Page<PaymentModel> {
+        id?.let{
+            return paymentRepository.findAllByStudentIdAndStatus(id, Status.ACTIVE, pageable)
+        }
+        return paymentRepository.findStudentByStudentStatus(Status.ACTIVE, pageable)
+    }
+
     // Get Id
     fun getById(id: Int): PaymentModel {
         return paymentRepository.findById(id).orElseThrow{ NotFoundIdException(Errors.FDM101.message.format(id), Errors.FDM101.code)

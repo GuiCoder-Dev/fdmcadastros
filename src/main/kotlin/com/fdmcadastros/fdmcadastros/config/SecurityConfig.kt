@@ -21,6 +21,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+import org.springframework.web.cors.CorsConfiguration
+import org.springframework.web.cors.CorsConfigurationSource
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 
 @Configuration
 @EnableWebSecurity
@@ -31,6 +34,20 @@ class SecurityConfig(
 
     val permissionRoute = arrayOf("/admin/creates")
 
+    @Bean
+    fun corsConfigurationSource(): CorsConfigurationSource {
+        val configuration = CorsConfiguration().apply {
+            allowedOrigins = listOf("http://localhost:3000")
+            allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
+            allowedHeaders = listOf("*")
+            allowCredentials = true
+            maxAge = 3600
+        }
+
+        return UrlBasedCorsConfigurationSource().apply {
+            registerCorsConfiguration("/**", configuration)
+        }
+    }
 
     @Bean
     fun passwordEncoder(): PasswordEncoder {
@@ -54,7 +71,7 @@ class SecurityConfig(
 
         return httpSecurity
 
-            .cors { cors -> cors.disable() }
+            .cors { }
             .csrf { csrf -> csrf.disable() }
 
             .authorizeHttpRequests{

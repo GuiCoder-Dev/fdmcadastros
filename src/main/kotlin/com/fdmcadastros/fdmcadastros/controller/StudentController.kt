@@ -49,7 +49,7 @@ class StudentController(
     @ResponseStatus(HttpStatus.NO_CONTENT)
     fun updateStudent(@PathVariable id: Int, @RequestBody @Valid student: PutStudentRequest){
         val previousStudent = studentService.getById(id = id)
-        return studentService.update(student.toStudentModel(previousStudent))
+        studentService.update(student.toStudentModel(previousStudent))
     }
 
     @DeleteMapping("/delete/{id}")

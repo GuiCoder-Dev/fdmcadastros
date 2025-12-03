@@ -18,7 +18,7 @@ enum class Errors(
     FDM402("FDM-402", "e-mail must have a valid domain"),
 
     //501 a 600 (Authentication Error)
-    FDM501("FDM-501", "Authentication Failed"),
+    FDM501("FDM-501", "Authentication Failed, invalid password or email"),
 
     //601 a 700 (Authorization Error)
     FDM601("FDM-601", "invalid signature"),
@@ -26,5 +26,10 @@ enum class Errors(
 
     //701 a 800 (Request Error)
     FDM701("FDM-701", "invalid request"),
+
+    //801 a 900 (Date Error)
+    FDM801("FDM-801", "the registrationDate must be before the current date"),
+    FDM802("FDM-802", "the birthdayDate must be before the current date"),
+    FDM803("FDM-803", "the paymentDate must be after the current date"),
 
 }

@@ -1,6 +1,7 @@
 package com.fdmcadastros.fdmcadastros.controller.request
 
 import com.fasterxml.jackson.annotation.JsonAlias
+import jakarta.validation.constraints.Future
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.PastOrPresent
 import java.math.BigDecimal

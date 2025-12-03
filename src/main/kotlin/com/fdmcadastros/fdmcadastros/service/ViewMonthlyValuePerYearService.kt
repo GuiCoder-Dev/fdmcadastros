@@ -11,7 +11,6 @@ class ViewMonthlyValuePerYearService(
     private val viewMonthlyValuePerYearRepository: ViewMonthlyValuePerYearRepository
 ) {
 
-
     // Get All
     fun list(pageable: Pageable, year: Int?): Page<ViewMonthlyValuePerYearModel> {
         year?.let{
