@@ -37,14 +37,14 @@ Sistema de gestão educacional que permite:
 Antes de começar, certifique-se de ter instalado:
 
 - **MySQL 8.0+** - [Download](https://www.mysql.com/downloads/)
-- **JDK 17+** - [Download](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
+- **JDK 21+** - [Download](https://www.oracle.com/java/technologies/javase-jdk21-downloads.html)
 - **Node.js e NPM** - [Download](https://nodejs.org/)
 
 ---
 
 ## 🚀 Como Rodar o Projeto
 
-### 1️⃣ Backend (Kotlin/Spring Boot)
+### Backend (Kotlin/Spring Boot)
 
 **Clone e configure o banco de dados:**
 
@@ -55,3 +55,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/seu_banco?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
     username: seu_usuario
     password: sua_senha
+```
+
+### Frontend 
+
+**Instale as dependências e inicie o servidor (na pasta do frontend):**
+
+```
+npm install
+nmp start
+```
+
+---
+
