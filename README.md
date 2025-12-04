@@ -9,7 +9,6 @@ Este é meu **primeiro projeto desenvolvido do zero**. Um sistema web completo d
 Sistema de gestão educacional que permite:
 - ✅ Cadastro e gerenciamento de alunos
 - ✅ Controle de pagamentos e mensalidades
-- ✅ Autenticação segura com JWT
 
 ---
 
@@ -28,7 +27,15 @@ Sistema de gestão educacional que permite:
 ### Ferramentas de Desenvolvimento
 ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+---
+
+## 🔐 Funcionalidades de Segurança  
+- ✅ Autenticação com JWT  
+- ✅ Validação de tokens em endpoints  
+- ✅ Tratamento de erros customizado  
 
 ---
 
@@ -42,7 +49,7 @@ Antes de começar, certifique-se de ter instalado:
 
 ---
 
-## 🚀 Como Rodar o Projeto
+## ✨ Como Rodar o Projeto
 
 ### Backend (Kotlin/Spring Boot)
 
@@ -68,3 +75,9 @@ nmp start
 
 ---
 
+## Rodar Localmente
+
+- 🔄️ Backend (porta: 8080)  
+- 🔄️ Frontend (porta: 3000)
+
+---
