@@ -1,48 +1,57 @@
 # fdmcadastros 🚀
-Este é meu primeiro projeto que desenvolvo do absoluto 0. Ele consiste em um sistema (web) de cadastro de alunos e mensalidades, visando gerenciar alunos e seus pagamentos.
 
-## Tecnologias utilizadas 🧑‍💻
-### Backend (feito 100% por mim)
+Este é meu **primeiro projeto desenvolvido do zero**. Um sistema web completo de cadastro de alunos e gerenciamento de mensalidades, visando organizar e controlar alunos e seus pagamentos.
 
-<img src="https://github.com/GuiCoder-Dev/GuiCoder-Dev/blob/main/Kotlin%20logo.png?raw=true" alt="Kotlin" width="20" height="20">  **Kotlin** - linguagem principal  
-<img src="https://github.com/GuiCoder-Dev/GuiCoder-Dev/blob/main/SpringBoot.png" alt="SpringBoot" width="20" height="20"/> **Spring Boot 3** - framework    
-<img src="https://github.com/GuiCoder-Dev/GuiCoder-Dev/blob/main/Mysql%20logo.png?raw=true" alt="MYSql" width="20" height="20"/> **MySQL 8** - banco de dados  
+---
 
-### Frontend (auxílio da IA)
+## 🎯 Sobre o Projeto
 
-<img src="" alt="JavaScript" width="20" height="20"/> **JavaScript** - linguagem principal  
-<img src="" alt="React" width="20" height="20"/> **React** - biblioteca  
+Sistema de gestão educacional que permite:
+- ✅ Cadastro e gerenciamento de alunos
+- ✅ Controle de pagamentos e mensalidades
+- ✅ Autenticação segura com JWT
 
-### Ambientes de desenvolvimento
+---
 
-**Intellij** - IDE (backend)  
-**VSCode** - IDE (frontend)
+## 🧑‍💻 Tecnologias Utilizadas
 
-## Requisitos ⚙️
+### Backend (Desenvolvido 100% por mim)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 
-Ter **MySQL 8.0+** instalado  
-Ter **JDK 17+** instalado  
-Ter **NMP** instalado  
-Ter **NodeJS** instalado  
+### Frontend (Com auxílio de IA)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## Preparando o ambiente ✨
+### Ferramentas de Desenvolvimento
+![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-### MySQL
-configurar seu banco de dados, troque {}
+---
+
+## ⚙️ Requisitos
+
+Antes de começar, certifique-se de ter instalado:
+
+- **MySQL 8.0+** - [Download](https://www.mysql.com/downloads/)
+- **JDK 17+** - [Download](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
+- **Node.js e NPM** - [Download](https://nodejs.org/)
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+### 1️⃣ Backend (Kotlin/Spring Boot)
+
+**Clone e configure o banco de dados:**
 
 ```yaml
+# application.yml
+spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/{database}?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
-    username: {usuário}
-    password: {senha}
-```
-
-### Frontend
-nmp install/start (na pasta do frontend)
-
-```cmd
-  npm install
-  nmp start
-
-
-
+    url: jdbc:mysql://127.0.0.1:3306/seu_banco?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: seu_usuario
+    password: sua_senha
