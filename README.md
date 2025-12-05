@@ -46,6 +46,7 @@ Antes de começar, certifique-se de ter instalado:
 - **MySQL 8.0+** - [Download](https://www.mysql.com/downloads/)
 - **JDK 21+** - [Download](https://www.oracle.com/java/technologies/javase-jdk21-downloads.html)
 - **Node.js e NPM** - [Download](https://nodejs.org/)
+- Possuir meu .env
 
 ---
 
