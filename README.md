@@ -81,3 +81,15 @@ nmp start
 - 🔄️ Frontend (porta: 3000)
 
 ---
+
+## ❌ Erros Internos
+
+- FDM 101 a 200 (id error)
+- FDM 201 a 300 (inactive error)
+- FDM 301 a 400 (query error)
+- FDM 401 A 500 (e-mail error)
+- FDM 501 a 600 (authentication error)
+- FDM 601 a 700 (authorization error)
+- FDM 701 a 800 (request error)
+- FDM 801 a 900 (date error)
+
