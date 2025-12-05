@@ -75,7 +75,7 @@ nmp start
 
 ---
 
-## Rodar Localmente
+## 👀 Rodar Localmente
 
 - 🔄️ Backend (porta: 8080)  
 - 🔄️ Frontend (porta: 3000)
