@@ -1,4 +1,4 @@
-# fdmcadastros 🚀
+# FdMCadastros 🚀
 
 Este é meu **primeiro projeto desenvolvido do zero**. Um sistema web completo de cadastro de alunos e gerenciamento de mensalidades, visando organizar e controlar alunos e seus pagamentos.
 
